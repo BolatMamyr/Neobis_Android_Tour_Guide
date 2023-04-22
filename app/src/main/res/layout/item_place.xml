@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="place"
             type="com.example.tourguide.model.Place" />
@@ -15,11 +16,11 @@
         android:layout_height="84dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp"
         android:clickable="true"
         android:focusable="true"
-        android:foreground="?attr/selectableItemBackgroundBorderless">
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,7 +28,6 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_img"
-                tools:viewBindingIgnore="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
@@ -36,69 +36,70 @@
                 app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true">
 
                 <ImageView
                     android:id="@+id/img_listItem"
-                    android:background="@{place.image}"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
+                    app:imageResource="@{place.imageId}"
                     android:scaleType="centerCrop"
                     tools:src="@drawable/manana" />
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/txt_name"
-                android:text="@{place.name}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                android:text="@{place.name}"
                 android:textColor="@color/text_color"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/card_img"
                 app:layout_constraintTop_toTopOf="@id/card_img"
-                tools:text="Manana Restaurant and Bar"
-                android:maxLines="1" />
+                tools:text="Manana Restaurant and Bar" />
 
             <TextView
                 android:id="@+id/txt_address"
-                android:text="@{place.address}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:maxLines="1"
+                android:text="@{place.address}"
                 android:textColor="@color/dark_grey"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/txt_name"
                 app:layout_constraintTop_toBottomOf="@id/txt_name"
-                tools:text="пр. Достык, 535, уг. ул. Оспанова"
-                android:maxLines="1" />
+                tools:text="пр. Достык, 535, уг. ул. Оспанова" />
 
             <TextView
                 android:layout_width="0dp"
-                android:text="@{`Открыт до ` + place.time}"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:maxLines="1"
+                android:text="@{`Открыт до ` + place.time}"
                 android:textColor="@color/grey_open_until"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/txt_name"
                 app:layout_constraintTop_toBottomOf="@id/txt_address"
-                tools:text="Открыт до 24:00"
-                android:maxLines="1" />
+                tools:text="Открыт до 24:00" />
 
             <TextView
                 android:id="@+id/txt_distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:textColor="@color/grey_description"
-                tools:text="1,5 км"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp" />
+                tools:text="1,5 км" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

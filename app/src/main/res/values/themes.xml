@@ -14,4 +14,8 @@
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="TextAppearance.Expanded" parent="TextAppearance.Material3.ActionBar.Title">
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
 </resources>

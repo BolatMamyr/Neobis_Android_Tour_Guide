@@ -1,16 +1,20 @@
 package com.example.tourguide.fragments.restaurants
 
 import android.os.Bundle
+import android.text.Layout.Directions
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tourguide.R
 import com.example.tourguide.adapters.RvAdapter
 import com.example.tourguide.databinding.FragmentMainBinding
 import com.example.tourguide.databinding.FragmentRestaurantsBinding
+import com.example.tourguide.fragments.MainFragment
+import com.example.tourguide.fragments.MainFragmentDirections
 import com.example.tourguide.model.Place
 
 class RestaurantsFragment : Fragment() {
@@ -40,45 +44,48 @@ class RestaurantsFragment : Fragment() {
             setHasFixedSize(true)
         }
         mAdapter.updateData(getRestaurants())
-        mAdapter.onItemClick = {
-            Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_SHORT).show()
+        mAdapter.onItemClick = { place ->
+            place?.let {
+                val action = MainFragmentDirections.actionMainFragmentToDetailsFragment(place)
+                findNavController().navigate(action)
+            }
         }
     }
 
     private fun getRestaurants(): List<Place> {
         return listOf(
             Place("More&More",
-                resources.getDrawable(R.drawable.more_and_more, null),
+                R.drawable.more_and_more,
                 getString(R.string.more_and_more_address),
                 getString(R.string.more_and_more_overview),
                 "24:00"
                 ),
             Place("Manana",
-                resources.getDrawable(R.drawable.manana, null),
+                R.drawable.manana,
                 getString(R.string.more_and_more_address),
                 getString(R.string.manana_overview),
                 "23:00"
             ),
             Place("Pugasov",
-                resources.getDrawable(R.drawable.pugasov, null),
+                R.drawable.pugasov,
                 getString(R.string.pugasov_address),
                 getString(R.string.pugasov_overview),
                 "22:00"
             ),
             Place("Little Brazil",
-                resources.getDrawable(R.drawable.little_brazil, null),
+                R.drawable.little_brazil,
                 getString(R.string.little_brazil_address),
                 getString(R.string.little_brazil_overview),
                 "02:00"
             ),
             Place("Erbil",
-                resources.getDrawable(R.drawable.erbil1, null),
+                R.drawable.erbil1,
                 getString(R.string.erbil_address),
                 getString(R.string.erbil_overview),
                 "24:00"
             ),
             Place("Storia",
-                resources.getDrawable(R.drawable.storia, null),
+                R.drawable.storia,
                 getString(R.string.storia_address),
                 getString(R.string.storia_overview),
                 "23:00"
