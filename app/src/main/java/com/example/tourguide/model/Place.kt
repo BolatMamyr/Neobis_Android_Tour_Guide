@@ -11,5 +11,10 @@ data class Place(
     val imageId: Int,
     val address: String,
     val overview: String,
-    val time: String
+    val time: String,
+    val distance: Double,
+    val averageBill: Int,
+    val cuisine: String,
+    val latitude: String,
+    val longitude: String
 ): Parcelable

@@ -58,37 +58,67 @@ class RestaurantsFragment : Fragment() {
                 R.drawable.more_and_more,
                 getString(R.string.more_and_more_address),
                 getString(R.string.more_and_more_overview),
-                "24:00"
+                "24:00",
+                1.5,
+                4500,
+                "Морепродукты",
+                "43.2182375669765",
+                "76.9645552894261"
                 ),
             Place("Manana",
                 R.drawable.manana,
                 getString(R.string.more_and_more_address),
                 getString(R.string.manana_overview),
-                "23:00"
+                "23:00",
+                8.0,
+                5000,
+                "Европейская и восточная кухня",
+                "43.203699533618426",
+                "76.97674167364616"
             ),
             Place("Pugasov",
                 R.drawable.pugasov,
                 getString(R.string.pugasov_address),
                 getString(R.string.pugasov_overview),
-                "22:00"
+                "22:00",
+                9.0,
+                3500,
+                "Европейская и восточная кухня",
+                "43.25412728312345",
+                "76.96052277382388"
             ),
             Place("Little Brazil",
                 R.drawable.little_brazil,
                 getString(R.string.little_brazil_address),
                 getString(R.string.little_brazil_overview),
-                "02:00"
+                "02:00",
+                13.0,
+                8000,
+                "Бразильская кухня",
+                "43.21383522478644",
+                "76.92254980216582"
             ),
             Place("Erbil",
                 R.drawable.erbil1,
                 getString(R.string.erbil_address),
                 getString(R.string.erbil_overview),
-                "24:00"
+                "24:00",
+                2.0,
+                2500,
+                "Европейская и восточная кухня",
+                "43.33729430551487",
+                "76.94885264758564"
             ),
             Place("Storia",
                 R.drawable.storia,
                 getString(R.string.storia_address),
                 getString(R.string.storia_overview),
-                "23:00"
+                "23:00",
+                4.6,
+                5000,
+                "Итальянская кухня",
+                "43.25676758635216",
+                "76.96019803942696"
             )
         )
     }
